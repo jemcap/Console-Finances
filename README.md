@@ -1,6 +1,6 @@
 # Console-Finances
 
-20.12.2022 - A reinitialised repository for the fourth module challenge assessment of the Front-End Web Development Bootcamp. Console-Finances is a project that involves JavaScript to build a simple but working Financial Analysis application.
+Console-Finances is a project that involves JavaScript to build a simple but working Financial Analysis application. This is the fourth module challenge assessment of the Front-End Web Development Bootcamp. 
 
 ## Installation 
 
