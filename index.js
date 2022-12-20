@@ -202,4 +202,47 @@ const roundtoHundredth = (value) => {
 };
 console.log("Average Earnings: " + "$" + roundtoHundredth(average));
 // =================================== SECTION END =====================================
+
+// =================================== SECTION START ===================================
+// * The greatest increase in profits and losses (date and amount) over the entire period.
+// From the profitDiff output, what is the largest profit increase?
+// How to select and output the largest value in that array to the console?
+// How to select and output the largest loss values in the array to the console?
+const profMax = {
+  month: "",
+  profit: 0,
+};
+
+const lossMax = {
+  month: "",
+  profit: 0,
+};
+
+finances.forEach((month) => {
+  if (month[1] > profMax.profit) {
+    profMax.month = month[0];
+    profMax.profit = month[1];
+  } else if (month[1] < lossMax.profit) {
+    lossMax.month = month[0];
+    lossMax.profit = month[1];
+  }
+
+  return { profMax, lossMax };
+});
+
+console.log(
+  "Month of greatest increase in profits: " +
+    profMax.month +
+    " " +
+    "$" +
+    Math.max(...profitDiff)
+);
+console.log(
+  "Month of greatest decrease in profits: " +
+    lossMax.month +
+    " " +
+    "$" +
+    Math.min(...profitDiff)
+);
+// =================================== SECTION END =====================================
 // ############################################# CODE END #############################################
