@@ -134,4 +134,18 @@ let totalMonths = finances.length;
 console.log("Recorded Months:", totalMonths);
 // =================================== SECTION END =====================================
 
+// =================================== SECTION START ===================================
+// * The net total amount of Profit/Losses over the entire period.
+// How to select all values of the second element of that 2D array to those elements to show up into the console? - This is to add up all the values as they are integers
+pAndLs = finances.map((x) => x[1]);
+// console.log(pAndLs);
+
+// How to add those values together?
+const sum = pAndLs.reduce((date, earnings) => {
+  return date + earnings;
+}, 0);
+
+console.log("Total Earnings: " + "$" + sum); //outputs the sum of the second elements of the array: 38382578
+// =================================== SECTION END =====================================
+
 // ############################################# CODE END #############################################
