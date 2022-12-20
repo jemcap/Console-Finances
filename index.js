@@ -141,8 +141,8 @@ pAndLs = finances.map((x) => x[1]);
 // console.log(pAndLs);
 
 // How to add those values together?
-const sum = pAndLs.reduce((date, earnings) => {
-  return date + earnings;
+const sum = pAndLs.reduce((date, value) => {
+  return date + value;
 }, 0);
 
 console.log("Total Earnings: " + "$" + sum); //outputs the sum of the second elements of the array: 38382578
@@ -158,6 +158,28 @@ finances.forEach(function (item) {
     positiveArr.push(item);
   }
 });
+
+// Adding up the values in the positive and negative arrays
+let profitNum = positiveArr.map((x) => x[1]);
+let lossNum = negativeArr.map((x) => x[1]);
+
+const pSum = profitNum.reduce((date, value) => {
+  return date + value;
+}, 0);
+const nSum = lossNum.reduce((date, value) => {
+  return date + value;
+}, 0);
+
+// Calculating the biggest and smallest value within the array to find out the min and max profit
+const smallest_number = Math.min(...profitNum);
+const largest_number = Math.max(...profitNum);
+
+// Calculating the total profits and losses
+console.log("Total Profits:", "$" + pSum);
+console.log("Total Losses:", "$" + nSum);
+
+console.log("Minimum Profit:", "$" + smallest_number); // Smallest Value: 0
+console.log("Maximum Profit:", "$" + largest_number); // Largest Value: 24
 // =================================== SECTION END =====================================
 
 // ############################################# CODE END #############################################
