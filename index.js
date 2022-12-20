@@ -182,4 +182,24 @@ console.log("Minimum Profit:", "$" + smallest_number); // Smallest Value: 0
 console.log("Maximum Profit:", "$" + largest_number); // Largest Value: 24
 // =================================== SECTION END =====================================
 
+// =================================== SECTION START ===================================
+// * The average of the **changes** in Profit/Losses over the entire period.
+//   * You will need to track what the total change in profits are from month to month and then find the average.
+//   * (`Total/Number of months`)
+// How to calculate the difference from month to month?
+const profitDiff = pAndLs.slice(1).map((x, i) => x - pAndLs[i]);
+
+// profitDiff.forEach((x, i) =>
+//   // console.log(`${i + 1} ${i + 2} ${x}`)
+
+// );
+
+// How to find the average of the sum of those differences?
+const average = profitDiff.reduce((a, b) => a + b, 0) / profitDiff.length;
+// Round up value to its hundredths place
+const roundtoHundredth = (value) => {
+  return Number(value.toFixed(2));
+};
+console.log("Average Earnings: " + "$" + roundtoHundredth(average));
+// =================================== SECTION END =====================================
 // ############################################# CODE END #############################################
