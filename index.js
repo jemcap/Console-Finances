@@ -146,6 +146,18 @@ const sum = pAndLs.reduce((date, earnings) => {
 }, 0);
 
 console.log("Total Earnings: " + "$" + sum); //outputs the sum of the second elements of the array: 38382578
+
+// Separate the positive and negative values within the array and store into seperate arrays
+let positiveArr = [];
+let negativeArr = [];
+
+finances.forEach(function (item) {
+  if (item[1] <= 0) {
+    negativeArr.push(item);
+  } else {
+    positiveArr.push(item);
+  }
+});
 // =================================== SECTION END =====================================
 
 // ############################################# CODE END #############################################
